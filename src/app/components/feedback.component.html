@@ -1,0 +1,59 @@
+<p>
+  feedback works!
+</p>
+
+<form #feedbackForm="ngForm" (ngSubmit)="processForm(feedbackForm)">
+  <table>
+    <tr>
+      <td>
+        Valid : {{ feedbackForm.valid }}
+      </td>
+      <td>
+        Invalid : {{ feedbackForm.invalid }}
+      </td>
+    </tr>
+    <br>
+    <tr>
+      <td>
+        Name : **
+      </td>
+      <td>
+        <input type="text" name="name" ngModel required>
+      </td>
+    </tr>
+    <br>
+    <tr>
+      <td>
+        Phone No : **
+      </td>
+      <td>
+        <input type="phone" name="phone" ngModel required>
+      </td>
+    </tr>
+    <br>
+    <tr>
+      <td>
+        Email :
+      </td>
+      <td>
+        <input type="email" name="email" ngModel>
+      </td>
+    </tr>
+    <br>
+    <tr>
+      <td>
+        Comment : **
+      </td>
+      <td>
+        <input type="text" name="comment" ngModel required>
+      </td>
+    </tr>
+    <br>
+    <tr>
+      <td></td>
+      <td>
+        <button type="submit" [disabled]="feedbackForm.invalid">Submit</button>
+      </td>
+    </tr>
+  </table>
+</form>
